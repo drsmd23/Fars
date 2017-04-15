@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Scott Michael Dickson" />
+
+<meta name="date" content="2017-04-14" />
+
+<title>Fars</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Fars</h1>
+<h4 class="author"><em>Scott Michael Dickson</em></h4>
+<h4 class="date"><em>2017-04-14</em></h4>
+
+
+
+<div id="fars-package-overview" class="section level1">
+<h1>Fars package overview</h1>
+<p>The Fars package contains a series of functions that enable the user to quickly load and summarize motor vehicle crash data.</p>
+<p>The functions contained within this package are as follows:</p>
+<ul>
+<li>fars_read</li>
+<li>make_filename</li>
+<li>fars_read_years</li>
+<li>fars_summarize_years</li>
+<li>fars_map_state</li>
+</ul>
+<div id="fars_read" class="section level2">
+<h2>fars_read</h2>
+<p>The fars_read function enables users to read motor vehicle crash data from a csv file. The input to the function is the path, name, and extension of the csv file containing the data. The output is a data frame. The examples below use the 2013 and 2014 motor vehicle crash data that is included with this package and can be accessed using the following codes:</p>
+<ul>
+<li>system.file(“extdata”, “accident_2013.csv.bz2”, package = “Fars”)</li>
+<li>system.file(“extdata”, “accident_2014.csv.bz2”, package = “Fars”).</li>
+</ul>
+<p>Examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1 &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;accident_2013.csv.bz2&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;Fars&quot;</span>)
+y1 &lt;-<span class="st"> </span><span class="kw">fars_read</span>(x1)
+y1
+<span class="co">#&gt; # A tibble: 30,202 × 50</span>
+<span class="co">#&gt;   STATE ST_CASE VE_TOTAL VE_FORMS PVH_INVL  PEDS PERNOTMVIT PERMVIT</span>
+<span class="co">#&gt;   &lt;int&gt;   &lt;int&gt;    &lt;int&gt;    &lt;int&gt;    &lt;int&gt; &lt;int&gt;      &lt;int&gt;   &lt;int&gt;</span>
+<span class="co">#&gt; 1     1   10001        1        1        0     0          0       8</span>
+<span class="co">#&gt; 2     1   10002        2        2        0     0          0       2</span>
+<span class="co">#&gt; 3     1   10003        1        1        0     0          0       1</span>
+<span class="co">#&gt; 4     1   10004        1        1        0     0          0       3</span>
+<span class="co">#&gt; # ... with 30,198 more rows, and 42 more variables: PERSONS &lt;int&gt;,</span>
+<span class="co">#&gt; #   COUNTY &lt;int&gt;, CITY &lt;int&gt;, DAY &lt;int&gt;, MONTH &lt;int&gt;, YEAR &lt;int&gt;,</span>
+<span class="co">#&gt; #   DAY_WEEK &lt;int&gt;, HOUR &lt;int&gt;, MINUTE &lt;int&gt;, NHS &lt;int&gt;, ROAD_FNC &lt;int&gt;,</span>
+<span class="co">#&gt; #   ROUTE &lt;int&gt;, TWAY_ID &lt;chr&gt;, TWAY_ID2 &lt;chr&gt;, MILEPT &lt;int&gt;,</span>
+<span class="co">#&gt; #   LATITUDE &lt;dbl&gt;, LONGITUD &lt;dbl&gt;, SP_JUR &lt;int&gt;, HARM_EV &lt;int&gt;,</span>
+<span class="co">#&gt; #   MAN_COLL &lt;int&gt;, RELJCT1 &lt;int&gt;, RELJCT2 &lt;int&gt;, TYP_INT &lt;int&gt;,</span>
+<span class="co">#&gt; #   WRK_ZONE &lt;int&gt;, REL_ROAD &lt;int&gt;, LGT_COND &lt;int&gt;, WEATHER1 &lt;int&gt;,</span>
+<span class="co">#&gt; #   WEATHER2 &lt;int&gt;, WEATHER &lt;int&gt;, SCH_BUS &lt;int&gt;, RAIL &lt;chr&gt;,</span>
+<span class="co">#&gt; #   NOT_HOUR &lt;int&gt;, NOT_MIN &lt;int&gt;, ARR_HOUR &lt;int&gt;, ARR_MIN &lt;int&gt;,</span>
+<span class="co">#&gt; #   HOSP_HR &lt;int&gt;, HOSP_MN &lt;int&gt;, CF1 &lt;int&gt;, CF2 &lt;int&gt;, CF3 &lt;int&gt;,</span>
+<span class="co">#&gt; #   FATALS &lt;int&gt;, DRUNK_DR &lt;int&gt;</span>
+
+x2 &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;accident_2014.csv.bz2&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;Fars&quot;</span>)
+y2 &lt;-<span class="st"> </span><span class="kw">fars_read</span>(x2)
+y2
+<span class="co">#&gt; # A tibble: 30,056 × 50</span>
+<span class="co">#&gt;   STATE ST_CASE VE_TOTAL VE_FORMS PVH_INVL  PEDS PERNOTMVIT PERMVIT</span>
+<span class="co">#&gt;   &lt;int&gt;   &lt;int&gt;    &lt;int&gt;    &lt;int&gt;    &lt;int&gt; &lt;int&gt;      &lt;int&gt;   &lt;int&gt;</span>
+<span class="co">#&gt; 1     1   10001        1        1        0     0          0       2</span>
+<span class="co">#&gt; 2     1   10002        1        1        0     0          0       1</span>
+<span class="co">#&gt; 3     1   10003        2        2        0     0          0       7</span>
+<span class="co">#&gt; 4     1   10004        3        3        0     0          0       5</span>
+<span class="co">#&gt; # ... with 30,052 more rows, and 42 more variables: PERSONS &lt;int&gt;,</span>
+<span class="co">#&gt; #   COUNTY &lt;int&gt;, CITY &lt;int&gt;, DAY &lt;int&gt;, MONTH &lt;int&gt;, YEAR &lt;int&gt;,</span>
+<span class="co">#&gt; #   DAY_WEEK &lt;int&gt;, HOUR &lt;int&gt;, MINUTE &lt;int&gt;, NHS &lt;int&gt;, ROAD_FNC &lt;int&gt;,</span>
+<span class="co">#&gt; #   ROUTE &lt;int&gt;, TWAY_ID &lt;chr&gt;, TWAY_ID2 &lt;chr&gt;, MILEPT &lt;int&gt;,</span>
+<span class="co">#&gt; #   LATITUDE &lt;dbl&gt;, LONGITUD &lt;dbl&gt;, SP_JUR &lt;int&gt;, HARM_EV &lt;int&gt;,</span>
+<span class="co">#&gt; #   MAN_COLL &lt;int&gt;, RELJCT1 &lt;int&gt;, RELJCT2 &lt;int&gt;, TYP_INT &lt;int&gt;,</span>
+<span class="co">#&gt; #   WRK_ZONE &lt;int&gt;, REL_ROAD &lt;int&gt;, LGT_COND &lt;int&gt;, WEATHER1 &lt;int&gt;,</span>
+<span class="co">#&gt; #   WEATHER2 &lt;int&gt;, WEATHER &lt;int&gt;, SCH_BUS &lt;int&gt;, RAIL &lt;chr&gt;,</span>
+<span class="co">#&gt; #   NOT_HOUR &lt;int&gt;, NOT_MIN &lt;int&gt;, ARR_HOUR &lt;int&gt;, ARR_MIN &lt;int&gt;,</span>
+<span class="co">#&gt; #   HOSP_HR &lt;int&gt;, HOSP_MN &lt;int&gt;, CF1 &lt;int&gt;, CF2 &lt;int&gt;, CF3 &lt;int&gt;,</span>
+<span class="co">#&gt; #   FATALS &lt;int&gt;, DRUNK_DR &lt;int&gt;</span></code></pre></div>
+</div>
+<div id="make_filename" class="section level2">
+<h2>make_filename</h2>
+<p>The make_filename function enables users to generate the csv filename for a particular year of motor vehicle crash data. The input to the function is a year. The output is a file name and extension.</p>
+<p>Examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1 &lt;-<span class="st"> </span><span class="kw">make_filename</span>(<span class="dv">2013</span>)
+x1
+<span class="co">#&gt; [1] &quot;accident_2013.csv.bz2&quot;</span>
+
+x2 &lt;-<span class="st"> </span><span class="kw">make_filename</span>(<span class="dv">2014</span>)
+x2
+<span class="co">#&gt; [1] &quot;accident_2014.csv.bz2&quot;</span></code></pre></div>
+</div>
+<div id="fars_read_years" class="section level2">
+<h2>fars_read_years</h2>
+<p>The fars_read_years function enables users to read motor vehicle crash data from a csv file for a particular year (or list/vector of years). The data must be stored in the current directory. The output is a data frame with only the month and year columns.</p>
+<p>Examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1 &lt;-<span class="st"> </span><span class="kw">fars_read_years</span>(<span class="dv">2013</span>)
+x1
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; # A tibble: 30,202 × 2</span>
+<span class="co">#&gt;   MONTH  year</span>
+<span class="co">#&gt;   &lt;int&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     1  2013</span>
+<span class="co">#&gt; 2     1  2013</span>
+<span class="co">#&gt; 3     1  2013</span>
+<span class="co">#&gt; 4     1  2013</span>
+<span class="co">#&gt; # ... with 30,198 more rows</span>
+
+x2 &lt;-<span class="st"> </span><span class="kw">fars_read_years</span>(<span class="kw">c</span>(<span class="dv">2013</span>, <span class="dv">2014</span>))
+x2
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; # A tibble: 30,202 × 2</span>
+<span class="co">#&gt;   MONTH  year</span>
+<span class="co">#&gt;   &lt;int&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     1  2013</span>
+<span class="co">#&gt; 2     1  2013</span>
+<span class="co">#&gt; 3     1  2013</span>
+<span class="co">#&gt; 4     1  2013</span>
+<span class="co">#&gt; # ... with 30,198 more rows</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; # A tibble: 30,056 × 2</span>
+<span class="co">#&gt;   MONTH  year</span>
+<span class="co">#&gt;   &lt;int&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     1  2014</span>
+<span class="co">#&gt; 2     1  2014</span>
+<span class="co">#&gt; 3     1  2014</span>
+<span class="co">#&gt; 4     1  2014</span>
+<span class="co">#&gt; # ... with 30,052 more rows</span></code></pre></div>
+</div>
+<div id="fars_summarize_years" class="section level2">
+<h2>fars_summarize_years</h2>
+<p>The fars_summarize_years function enables users to read motor vehicle crash data from a csv file for a particular year (or list/vector of years). The data must be stored in the current directory. The output is a data frame with only the month and year columns. The number of motor vehicle crashes are represented with months displayed along the rows and years along the columns.</p>
+<p>Examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1 &lt;-<span class="st"> </span><span class="kw">fars_summarize_years</span>(<span class="dv">2013</span>)
+x1
+<span class="co">#&gt; # A tibble: 12 × 2</span>
+<span class="co">#&gt;   MONTH `2013`</span>
+<span class="co">#&gt; * &lt;int&gt;  &lt;int&gt;</span>
+<span class="co">#&gt; 1     1   2230</span>
+<span class="co">#&gt; 2     2   1952</span>
+<span class="co">#&gt; 3     3   2356</span>
+<span class="co">#&gt; 4     4   2300</span>
+<span class="co">#&gt; # ... with 8 more rows</span>
+
+x2 &lt;-<span class="st"> </span><span class="kw">fars_summarize_years</span>(<span class="kw">c</span>(<span class="dv">2013</span>, <span class="dv">2014</span>))
+x2
+<span class="co">#&gt; # A tibble: 12 × 3</span>
+<span class="co">#&gt;   MONTH `2013` `2014`</span>
+<span class="co">#&gt; * &lt;int&gt;  &lt;int&gt;  &lt;int&gt;</span>
+<span class="co">#&gt; 1     1   2230   2168</span>
+<span class="co">#&gt; 2     2   1952   1893</span>
+<span class="co">#&gt; 3     3   2356   2245</span>
+<span class="co">#&gt; 4     4   2300   2308</span>
+<span class="co">#&gt; # ... with 8 more rows</span></code></pre></div>
+</div>
+<div id="fars_map_state" class="section level2">
+<h2>fars_map_state</h2>
+<p>The fars_map_state function enables users to read motor vehicle crash data from a csv file for a particular year and state number. The data must be stored in the current directory. The output is a graph showing accident locations in a particular year on a map of the user-defined state.</p>
+<p>Examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fars_map_state</span>(<span class="dv">1</span>, <span class="dv">2013</span>)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fars_map_state</span>(<span class="dv">48</span>, <span class="dv">2014</span>)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

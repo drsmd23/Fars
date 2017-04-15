@@ -1,0 +1,14 @@
+Package: Fars
+Title: Summarize motor vehicle crash data
+Version: 1.0
+Authors@R: person("Scott", "Dickson", email = "scott.dickson@gad.gov.uk", role = c("aut", "cre"))
+Description: Contains functions to summarize motor vehicle crash data.
+Depends: R (>= 3.3.3)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, maps, readr, tidyr, magrittr
+RoxygenNote: 6.0.1
+Suggests: knitr, testthat, 
+    rmarkdown
+VignetteBuilder: knitr
