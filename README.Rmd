@@ -2,12 +2,105 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+```{r intro, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+options(tibble.print_min = 4L, tibble.print_max = 4L)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(maps)
+library(magrittr)
+library(Fars)
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
+```
+
+# Fars package overview
+
+The Fars package contains a series of functions that enable the user to quickly load and summarize motor vehicle crash data. 
+
+The functions contained within this package are as follows:
+
+* fars_read
+* make_filename
+* fars_read_years
+* fars_summarize_years
+* fars_map_state
+
+## fars_read
+
+The fars_read function enables users to read motor vehicle crash data from a csv file.
+The input to the function is the path, name, and extension of the csv file containing the data.
+The output is a data frame. 
+The examples below use the 2013 and 2014 motor vehicle crash data that is included with this package and can be accessed using the following codes:
+
+* system.file("extdata", "accident_2013.csv.bz2", package = "Fars")
+* system.file("extdata", "accident_2014.csv.bz2", package = "Fars").
+ 
+Examples:
+```{r read_ex}
+x1 <- system.file("extdata", "accident_2013.csv.bz2", package = "Fars")
+y1 <- fars_read(x1)
+y1
+
+x2 <- system.file("extdata", "accident_2014.csv.bz2", package = "Fars")
+y2 <- fars_read(x2)
+y2
+```
+
+## make_filename
+
+The make_filename function enables users to generate the csv filename for a particular year of motor vehicle crash data.
+The input to the function is a year.
+The output is a file name and extension. 
+ 
+Examples:
+```{r make_ex}
+x1 <- make_filename(2013)
+x1
+
+x2 <- make_filename(2014)
+x2
+```
+
+## fars_read_years
+
+The fars_read_years function enables users to read motor vehicle crash data from a csv file for a particular year (or list/vector of years).
+The data must be stored in the current directory.
+The output is a data frame with only the month and year columns. 
+ 
+Examples:
+```{r read_year_ex}
+x1 <- fars_read_years(2013)
+x1
+
+x2 <- fars_read_years(c(2013, 2014))
+x2
+```
+
+## fars_summarize_years
+
+The fars_summarize_years function enables users to read motor vehicle crash data from a csv file for a particular year (or list/vector of years).
+The data must be stored in the current directory.
+The output is a data frame with only the month and year columns.
+The number of motor vehicle crashes are represented with months displayed along the rows and years along the columns. 
+ 
+Examples:
+```{r summarize_year_ex}
+x1 <- fars_summarize_years(2013)
+x1
+
+x2 <- fars_summarize_years(c(2013, 2014))
+x2
+```
+
+## fars_map_state
+
+The fars_map_state function enables users to read motor vehicle crash data from a csv file for a particular year and state number.
+The data must be stored in the current directory.
+The output is a graph showing accident locations in a particular year on a map of the user-defined state.
+ 
+Examples:
+```{r map_state_ex}
+fars_map_state(1, 2013)
+fars_map_state(48, 2014)
 ```
