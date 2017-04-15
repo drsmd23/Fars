@@ -2,6 +2,8 @@
 output: github_document
 ---
 
+[![Build Status](https://travis-ci.org/drsmd23/Fars.svg?branch=master)](https://travis-ci.org/drsmd23/Fars)
+
 # Fars package overview
 
 The Fars package contains a series of functions that enable the user to quickly load and summarize motor vehicle crash data. 
